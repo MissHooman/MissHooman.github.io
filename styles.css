@@ -1,13 +1,29 @@
-.column section {
-  width: 11%;
-  background-color: #ffb3b3;
-  padding: 1px 0px 1px 0px;
-  text-align: center;
-  font-family: "Brush Script MT";
-  float: left;
+/* tee hee hee */
+@font-face {
+	font-family: "Comic";
+	src: url('fonts/comic.ttf');
+	src: url('fonts/comic.ttf') format('truetype');
 }
 
-.column aside img {
-  float: left;
-  width: 100%;
+body {
+ background-image: url("bg.png");
+ background-color: #ffffff;
+}
+
+.first{
+	width:11%;
+	height:125px;
+	position:absolute;
+	background-color: #ffb3b3;
+	text-align: center;
+	
+ }
+
+.second{
+	background-color: #b3b3ff;
+	width:11%;
+	height:125px;
+	position: relative;
+	top: 140px;
+	text-align: center;
 }

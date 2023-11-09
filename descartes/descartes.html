@@ -1,5 +1,15 @@
 <html>
   <title>Descartes Revision Helper</title>
   <h1>Descartes Revision Helper</h1>
-  <body>Press button for question answer right of have die :3</body>
+  <body>Press button for question answer right or have die :3</body>
+  <h2 id="question">Hallo!</h2>
+  <script>
+    let questions = [
+      'What makes a False Dilemma flawed?',
+      'Hoober goober?'
+      ];
+    let randomNumber = Math.floor(Math.random()*questions.length);
+    questionUsed.setAttribute('src', questions[randomNumber]);
+    document.getElementById("question").innerHTML = questionUsed;
+  </script>
 </html>

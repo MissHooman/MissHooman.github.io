@@ -10,10 +10,12 @@
       'What makes a False Dilemma flawed?',
       'Hoober goober?'
       ];
+    questionHeading = document.getElementById("question");
+    txt = document.createTextNode("gumple");
     function generateQuestion() {
       let randomNumber = Math.floor(Math.random()*questions.length);
       questionUsed.setAttribute('src', questions[randomNumber]);
-      document.getElementById("question").innerHTML = 'gunkle';
+      questionHeading.appendChild(txt);
     }
   </script>
 </html>

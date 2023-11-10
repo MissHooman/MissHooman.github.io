@@ -12,6 +12,7 @@
       ];
     questionHeading = document.getElementById("question");
     txt = document.createTextNode("gumple");
+    questionHeading.appendChild(txt);
     function generateQuestion() {
       let randomNumber = Math.floor(Math.random()*questions.length);
       questionUsed.setAttribute('src', questions[randomNumber]);

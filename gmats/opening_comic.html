@@ -53,48 +53,49 @@
       }
     </style>
   </head>
-  <body>yowzers! this page is under construction!</body>
-  <div class="imgbox">
-    <img class="centre-fit" src="gmats opening pg1.png"></img>
-    <div class="caption">Page 1</div>
-  </div>
+    <body>
+    <div class="imgbox">
+      <img class="centre-fit" src="gmats opening pg1.png"></img>
+      <div class="caption">Page 1</div>
+    </div>
 
-  <div class="imgbox">
-    <img class="centre-fit" src="gmats opening pg2.png"></img>
-    <div class="caption">Page 2</div>
-  </div>
+    <div class="imgbox">
+      <img class="centre-fit" src="gmats opening pg2.png"></img>
+      <div class="caption">Page 2</div>
+    </div>
 
-  <div class="imgbox">
-    <img class="centre-fit" src="gmats opening pg3.png"></img>
-    <div class="caption">Page 3</div>
-  </div>
+    <div class="imgbox">
+      <img class="centre-fit" src="gmats opening pg3.png"></img>
+      <div class="caption">Page 3</div>
+    </div>
   
-  <a class="prev" onclick="plusSlides(-1)">❮</a>
-  <a class="next" onclick="plusSlides(1)">❯</a>
+    <a class="prev" onclick="plusSlides(-1)">❮</a>
+    <a class="next" onclick="plusSlides(1)">❯</a>
 
   
-  <script>
-    let slideIndex = 1;
-    showSlides(slideIndex);
+    <script>
+      let slideIndex = 1;
+      showSlides(slideIndex);
     
-    function plusSlides(n) { showSlides(slideIndex += n); }
-
-    function currentSlide(n) { showSlides(slideIndex = n); }
-
-    function showSlides(n) {
+      function plusSlides(n) { showSlides(slideIndex += n); } 
+  
+      function currentSlide(n) { showSlides(slideIndex = n); }
+  
+      function showSlides(n) {
       let i;
-      let slides = document.getElementsByClassName("imgbox");
-      let dots = document.getElementsByClassName("dot");
-      if (n > slides.length) {slideIndex = 1}    
-      if (n < 1) {slideIndex = slides.length}
-      for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none"; 
+        let slides = document.getElementsByClassName("imgbox");
+        let dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {slideIndex = 1}    
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none"; 
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "grid"; 
+        dots[slideIndex-1].className += " active";
       }
-      for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-      }
-      slides[slideIndex-1].style.display = "grid"; 
-      dots[slideIndex-1].className += " active";
-    }
-  </script>
+    </script>
+    </body>
 </html>

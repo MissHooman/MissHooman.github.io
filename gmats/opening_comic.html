@@ -36,7 +36,7 @@
       
       /* Position the "next button" to the right */
       .next {
-        right: 0;
+        right: 10px;
       }
       
       /* On hover, add a black background color with a little bit see-through */
@@ -72,32 +72,32 @@
       <div class="caption">Page 3</div>
     </div>
   
-    <a class="prev" onclick="plusSlides(-1)">❮</a>
-    <a class="next" onclick="plusSlides(1)">❯</a>
+    <a class="prev" id="prev" onclick="plusSlides(-1)">❮</a>
+    <a class="next" id="next" onclick="plusSlides(1)">❯</a>
 
   
     <script>
       let slideIndex = 1;
       showSlides(slideIndex);
+      var next = document.getElementById("next");
+      var prev = document.getElementById("prev");
     
-      function plusSlides(n) { showSlides(slideIndex += n); } 
+      function plusSlides(n) { showSlides(slideIndex += n);} 
   
-      function currentSlide(n) { showSlides(slideIndex = n); }
+      function currentSlide(n) { showSlides(slideIndex = n);}
   
       function showSlides(n) {
       let i;
         let slides = document.getElementsByClassName("imgbox");
-        let dots = document.getElementsByClassName("dot");
-        if (n > slides.length) {slideIndex = 1}    
-        if (n < 1) {slideIndex = slides.length}
+        if (n === 3) {next.style.display = "none";}
+        else if (n === 2) {next.style.display = "block"; prev.style.display = "block";}
+        else {prev = document.getElementById("prev"); prev.style.display = "none";}
+        if (n > slides.length) {slideIndex = 3}
+        if (n < 1) {slideIndex = 1}
         for (i = 0; i < slides.length; i++) {
           slides[i].style.display = "none"; 
         }
-        for (i = 0; i < dots.length; i++) {
-          dots[i].className = dots[i].className.replace(" active", "");
-        }
-        slides[slideIndex-1].style.display = "grid"; 
-        dots[slideIndex-1].className += " active";
+        slides[slideIndex-1].style.display = "grid";
       }
     </script>
     </body>
